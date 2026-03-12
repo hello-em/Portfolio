@@ -4,9 +4,20 @@ var modal = document.getElementById("modal");
 
 // Get the image and insert it inside the modal - use its "alt" text as a caption
 function modalFunction(clicked_id){
+	// Null checks to prevent errors
+	if (!modal) {
+		console.warn('Modal element not found');
+		return;
+	}
+
 	var img = document.getElementById(clicked_id);
 	var replaceImg = document.getElementById("image");
 	var captionText = document.getElementById("caption");
+
+	if (!img || !replaceImg || !captionText) {
+		console.warn('Required modal elements not found');
+		return;
+	}
 
 	modal.style.display = "block";
 	replaceImg.src = img.src;
@@ -17,13 +28,17 @@ function modalFunction(clicked_id){
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-  modal.style.display = "none";
+if (span && modal) {
+	span.onclick = function() { 
+		modal.style.display = "none";
+	}
 }
 
 // When the user clicks anywhere outside of the modal image, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
+if (modal) {
+	window.addEventListener('click', function(event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
+		}
+	});
 }

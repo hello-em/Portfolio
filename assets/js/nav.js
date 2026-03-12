@@ -129,12 +129,5 @@ $(document).ready(function() {
 
 			} );
 
-	// When the user clicks anywhere outside of the modal image, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
 });
 

@@ -1,7 +1,12 @@
-window.onload = function() {
+window.addEventListener('load', function() {
   const toggle = document.getElementById('toggle');
   const slideBlock = document.getElementsByClassName('slide-block')[0];
 
+  // Null checks to prevent errors if elements don't exist
+  if (!toggle || !slideBlock) {
+    console.warn('Dark mode toggle or slide block element not found');
+    return;
+  }
   
   toggle.addEventListener('change', function(e) {
     if(e.target.checked) {
@@ -26,7 +31,7 @@ window.onload = function() {
 		(window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('color-mode'))
 		){
 		document.documentElement.setAttribute('color-mode', 'dark');
-		toggle.checked = "checked";
+		toggle.checked = true;
 	}
 
-};
+});

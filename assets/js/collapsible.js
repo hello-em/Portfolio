@@ -1,10 +1,16 @@
 var coll = document.getElementsByClassName("collapsible");
-var i;
 
-for (i = 0; i < coll.length; i++) {
+for (var i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     this.classList.toggle("active");
     var content = this.nextElementSibling;
+    
+    // Null check to prevent errors if no sibling element exists
+    if (!content) {
+      console.warn('No content element found for collapsible');
+      return;
+    }
+    
     if (content.style.maxHeight){
       content.style.maxHeight = null;
       // this.innerHTML = "Don't click this!"
