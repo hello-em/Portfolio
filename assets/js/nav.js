@@ -61,7 +61,7 @@ if (typeof jQuery === 'undefined') {
 
 
 
-		multiTg = function() {
+		var multiTg = function() {
 
 		  cssmenu.find(".has-sub").prepend('<span class="submenu-button"></span>');
 
