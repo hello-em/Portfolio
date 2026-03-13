@@ -38,7 +38,8 @@
 			if ( !isNaN( el.offsetLeft ) ) {
 				offsetLeft += el.offsetLeft;
 			}
-		} while( el = el.offsetParent )
+			el = el.offsetParent;
+		} while( el )
 
 		return {
 			top : offsetTop,
@@ -92,6 +93,22 @@
 			this.didScroll = false;
 
 			var self = this;
+
+			// Check if required libraries are loaded
+			if (typeof imagesLoaded === 'undefined') {
+				console.warn('imagesLoaded library not loaded');
+				return;
+			}
+
+			if (typeof Masonry === 'undefined') {
+				console.warn('Masonry library not loaded');
+				return;
+			}
+
+			if (typeof Modernizr === 'undefined') {
+				console.warn('Modernizr library not loaded');
+				return;
+			}
 
 			imagesLoaded( this.el, function() {
 				

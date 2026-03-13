@@ -1,4 +1,8 @@
-$(document).ready(function() {
+// Check if jQuery is loaded before using it
+if (typeof jQuery === 'undefined') {
+	console.warn('jQuery not loaded - nav.js requires jQuery');
+} else {
+	$(document).ready(function() {
 
 
       
@@ -119,15 +123,16 @@ $(document).ready(function() {
 
 	
 
-	new AnimOnScroll( document.getElementById( 'grid' ), {
+	// Check if AnimOnScroll is available before using
+	var gridElement = document.getElementById( 'grid' );
+	if (gridElement && typeof AnimOnScroll !== 'undefined') {
+		new AnimOnScroll( gridElement, {
+			minDuration : 0.4,
+			maxDuration : 0.7,
+			viewportFactor : 0.2
+		} );
+	}
 
-				minDuration : 0.4,
-
-				maxDuration : 0.7,
-
-				viewportFactor : 0.2
-
-			} );
-
-});
+	});
+}
 
