@@ -19,7 +19,6 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Work', path: '/' },
     { name: 'About', path: '/about' },
-    { name: 'Archive', path: '/archive' },
   ];
 
   return (
@@ -33,7 +32,7 @@ export default function Navbar() {
           className="text-xl font-semibold tracking-tight hover:text-brand/70 transition-colours z-[110] flex items-center gap-2"
           aria-label="Emily Li — home"
         >
-          <img src="/assets/images/logo.svg" alt="Emily Li logo" className="w-6 h-6" />
+          <img src="/assets/logo.svg" alt="Emily Li logo" className="w-6 h-6" />
           <span>Emily<span className="text-brand">.</span></span>
         </Link>
 

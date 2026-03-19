@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Footer() {
   return (
     <footer className="py-12 px-6 border-t border-black/5 dark:border-white/5">
@@ -13,6 +15,9 @@ export default function Footer() {
           <p className="text-xs mt-1">© {new Date().getFullYear()} Emily Li. All rights reserved.</p>
         </div>
         <div className="flex gap-8 uppercase tracking-widest text-xs">
+          <Link to="/archive" className="hover:text-brand transition-colours">
+            Archive
+          </Link>
           <a
             href="https://www.linkedin.com/in/helloemerie"
             target="_blank"
@@ -37,14 +42,7 @@ export default function Footer() {
           >
             GitHub
           </a>
-          <a
-            href="https://www.youtube.com/channel/UC8qOV13AYOR02eJ3H2wx7jw"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-brand transition-colours"
-          >
-            YouTube
-          </a>
+
         </div>
       </div>
     </footer>

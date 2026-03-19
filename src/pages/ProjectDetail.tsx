@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowLeft, Calendar, User } from 'lucide-react';
-import { projects } from '../data/projects';
+import { projects, featuredProjects } from '../data/projects';
 import Lightbox from '../components/Lightbox';
 import { ProjectBlock } from '../types';
 
@@ -17,9 +17,10 @@ export default function ProjectDetail() {
 
   if (!project) return <Navigate to="/" replace />;
 
-  const currentIndex = projects.findIndex((p) => p.id === id);
-  const nextProject = projects[(currentIndex + 1) % projects.length];
-  const prevProject = projects[(currentIndex - 1 + projects.length) % projects.length];
+  const currentIndex = featuredProjects.findIndex((p) => p.id === id);
+  const navIndex = currentIndex !== -1 ? currentIndex : 0;
+  const nextProject = featuredProjects[(navIndex + 1) % featuredProjects.length];
+  const prevProject = featuredProjects[(navIndex - 1 + featuredProjects.length) % featuredProjects.length];
 
   function renderBlock(block: ProjectBlock, blockIndex: number) {
     if (block.type === 'text') {

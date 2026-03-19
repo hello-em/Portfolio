@@ -7,7 +7,7 @@ export const projects: Project[] = [
     subtitle: 'Brainstation Diploma Project',
     category: 'UX Case Study',
     description: 'A comprehensive fitness platform designed to bridge the gap between personal trainers and clients.',
-    image: '/assets/images/home-images/Flex.jpg',
+    image: '/assets/home-images/Flex.jpg',
     tags: ['UX Research', 'UI Design', 'Prototyping'],
     role: 'Lead UX Designer',
     timeline: '12 Weeks',
@@ -16,11 +16,44 @@ export const projects: Project[] = [
       {
         title: 'Overview',
         blocks: [
-          {
-            type: 'text',
-            content: 'Flex is a fitness platform designed to democratize access to professional fitness guidance. Personal training is often expensive and inaccessible — Flex bridges that gap through a digital-first approach.',
-          },
-          { type: 'image', url: '/assets/images/project-img/flex-overview.png', caption: 'Flex app overview' },
+          { type: 'image', url: '/assets/project-img/flex/Flex-Cover.jpg', caption: 'Flex cover' },
+          { type: 'text', content: 'Flex is a fitness platform designed to democratize access to professional fitness guidance. Personal training is often expensive and inaccessible — Flex bridges that gap through a digital-first approach.' },
+        ],
+      },
+      {
+        title: 'Research',
+        blocks: [
+          { type: 'image', url: '/assets/project-img/flex/Flex-PrimaryResearch.jpg', caption: 'Primary research' },
+          { type: 'image', url: '/assets/project-img/flex/Flex-SecondaryResearch.jpg', caption: 'Secondary research' },
+          { type: 'image', url: '/assets/project-img/flex/Flex-Persona.jpg', caption: 'User persona' },
+          { type: 'image', url: '/assets/project-img/flex/Flex-HMW.jpg', caption: 'How might we' },
+        ],
+      },
+      {
+        title: 'Design',
+        blocks: [
+          { type: 'image', url: '/assets/project-img/flex/Flex-ExperienceMap.jpg', caption: 'Experience map' },
+          { type: 'image', url: '/assets/project-img/flex/Flex-TaskFlow.jpg', caption: 'Task flow' },
+          { type: 'image-grid', urls: ['/assets/project-img/flex/Ex-Sketches-1.jpg', '/assets/project-img/flex/Ex-Sketches-2.jpg'] },
+          { type: 'image-grid', urls: ['/assets/project-img/flex/Mid-Fi-1.jpg', '/assets/project-img/flex/Mid-Fi-2.jpg'] },
+        ],
+      },
+      {
+        title: 'User Testing',
+        blocks: [
+          { type: 'image-grid', urls: ['/assets/project-img/flex/Flex-UserTesting1.jpg', '/assets/project-img/flex/Flex-UserTesting2.jpg'] },
+        ],
+      },
+      {
+        title: 'UI & Branding',
+        blocks: [
+          { type: 'image', url: '/assets/project-img/flex/FlexMoodBoard.jpg', caption: 'Mood board' },
+          { type: 'image', url: '/assets/project-img/flex/FlexColours.jpg', caption: 'Colour palette' },
+          { type: 'image-grid', urls: ['/assets/project-img/flex/FlexType-1.jpg', '/assets/project-img/flex/FlexType-2.jpg'] },
+          { type: 'image', url: '/assets/project-img/flex/Flex8Grid.jpg', caption: '8pt grid' },
+          { type: 'image', url: '/assets/project-img/flex/Flex-HiFi.jpg', caption: 'Hi-fi screens' },
+          { type: 'image-grid', urls: ['/assets/project-img/flex/Flex-MockUp.jpg', '/assets/project-img/flex/Flex-MockUp-2.jpg'] },
+          { type: 'image', url: '/assets/project-img/flex/Flex-Marketing.jpg', caption: 'Marketing mockup' },
         ],
       },
     ],
@@ -33,7 +66,7 @@ export const projects: Project[] = [
     subtitle: 'Short-Term Contracted Job',
     category: 'UX Design',
     description: 'Optimizing the e-commerce experience for a specialized footwear retailer.',
-    image: '/assets/images/home-images/UniversoleFit.png',
+    image: '/assets/home-images/UniversoleFit.png',
     tags: ['E-commerce', 'Optimization', 'User Testing'],
     role: 'UX Designer',
     timeline: '4 Weeks',
@@ -42,11 +75,16 @@ export const projects: Project[] = [
       {
         title: 'Overview',
         blocks: [
-          {
-            type: 'text',
-            content: 'Universole Fit saw a high drop-off rate during checkout. The goal was to identify friction points and streamline the path to purchase.',
-          },
-          { type: 'image', url: '/assets/images/project-img/universolefit-overview.png', caption: 'Universole Fit redesign' },
+          { type: 'image', url: '/assets/project-img/universolefit/UniversoleFit_Cover.jpg', caption: 'Universole Fit cover' },
+          { type: 'text', content: 'Universole Fit saw a high drop-off rate during checkout. The goal was to identify friction points and streamline the path to purchase.' },
+        ],
+      },
+      {
+        title: 'Before & After',
+        blocks: [
+          { type: 'image-grid', urls: ['/assets/project-img/universolefit/Before-1.jpg', '/assets/project-img/universolefit/After-1.jpg'] },
+          { type: 'image', url: '/assets/project-img/universolefit/UniversoleFit_Branding.jpg', caption: 'Branding' },
+          { type: 'image', url: '/assets/project-img/universolefit/mockup-1.jpg', caption: 'Final mockup' },
         ],
       },
     ],
@@ -59,7 +97,7 @@ export const projects: Project[] = [
     subtitle: 'Brainstation Certificate Project',
     category: 'UX Case Study',
     description: 'Reimagining the content consumption experience for power users.',
-    image: '/assets/images/home-images/YouTubeRedesign.png',
+    image: '/assets/home-images/YouTubeRedesign.png',
     tags: ['Redesign', 'Visual Design', 'Interaction'],
     role: 'Product Designer',
     timeline: '6 Weeks',
@@ -68,11 +106,24 @@ export const projects: Project[] = [
       {
         title: 'Overview',
         blocks: [
-          {
-            type: 'text',
-            content: "YouTube's interface has become cluttered over years of feature additions. This project focused on decluttering the viewing experience while maintaining discoverability for power users.",
-          },
-          { type: 'image', url: '/assets/images/project-img/youtube-overview.png', caption: 'YouTube Redesign concept' },
+          { type: 'image', url: '/assets/project-img/youtuberedesign/YouTube_Cover.png', caption: 'YouTube Redesign cover' },
+          { type: 'text', content: "YouTube's interface has become cluttered over years of feature additions. This project focused on decluttering the viewing experience while maintaining discoverability for power users." },
+        ],
+      },
+      {
+        title: 'Research',
+        blocks: [
+          { type: 'image', url: '/assets/project-img/youtuberedesign/youtube-interview.jpg', caption: 'User interviews' },
+          { type: 'image', url: '/assets/project-img/youtuberedesign/youtube-beforeafter-1.jpg', caption: 'Before & after analysis' },
+        ],
+      },
+      {
+        title: 'Design',
+        blocks: [
+          { type: 'image-grid', urls: ['/assets/project-img/youtuberedesign/youtube-lofi-1.png', '/assets/project-img/youtuberedesign/youtube-lofi-2.png'] },
+          { type: 'image-grid', urls: ['/assets/project-img/youtuberedesign/youtube-lofi-3.jpg', '/assets/project-img/youtuberedesign/youtube-lofi-4.jpg'] },
+          { type: 'image', url: '/assets/project-img/youtuberedesign/youtube_power_shorts.jpg', caption: 'Power Shorts feature' },
+          { type: 'image', url: '/assets/project-img/youtuberedesign/youtube_3d.jpg', caption: 'Final 3D mockup' },
         ],
       },
     ],
@@ -85,7 +136,7 @@ export const projects: Project[] = [
     subtitle: 'Current Side Work',
     category: 'Video Editing',
     description: 'A collection of freelance video editing projects spanning social media content, event recaps, and brand storytelling.',
-    image: '/assets/images/home-images/freelance-work.png',
+    image: '/assets/home-images/freelance-work.png',
     tags: ['Video Editing', 'Motion', 'Social Media'],
     role: 'Video Editor',
     timeline: 'Ongoing',
@@ -110,7 +161,7 @@ export const projects: Project[] = [
     subtitle: 'IAT 334 School Project',
     category: 'App Design',
     description: 'A community-driven app for local artisans and craft enthusiasts.',
-    image: '/assets/images/home-images/Sawyer.png',
+    image: '/assets/home-images/Sawyer.png',
     tags: ['Community', 'Mobile App', 'Branding'],
     role: 'UI/UX Designer',
     timeline: '1 Semester',
@@ -119,11 +170,25 @@ export const projects: Project[] = [
       {
         title: 'Overview',
         blocks: [
-          {
-            type: 'text',
-            content: 'Local artisans often struggle to find a dedicated platform to showcase their work and connect with local buyers without high platform fees.',
-          },
-          { type: 'image', url: '/assets/images/project-img/sawyer-overview.png', caption: 'Sawyer app screens' },
+          { type: 'image', url: '/assets/project-img/sawyer/Sawyer_Cover.png', caption: 'Sawyer cover' },
+          { type: 'text', content: 'Local artisans often struggle to find a dedicated platform to showcase their work and connect with local buyers without high platform fees.' },
+        ],
+      },
+      {
+        title: 'Branding',
+        blocks: [
+          { type: 'image-grid', urls: ['/assets/project-img/sawyer/sawyer-2.svg', '/assets/project-img/sawyer/sawyer-3.svg'] },
+          { type: 'image', url: '/assets/project-img/sawyer/sawyer-4.svg', caption: 'Brand identity' },
+        ],
+      },
+      {
+        title: 'Design Process',
+        blocks: [
+          { type: 'image-grid', urls: ['/assets/project-img/sawyer/sawyer-lofi-brainstorm-1.png', '/assets/project-img/sawyer/sawyer-lofi-brainstorm-2.png'] },
+          { type: 'image-grid', urls: ['/assets/project-img/sawyer/sawyer-1.png', '/assets/project-img/sawyer/sawyer-5.png'] },
+          { type: 'image-grid', urls: ['/assets/project-img/sawyer/sawyer-6.png', '/assets/project-img/sawyer/sawyer-7.png'] },
+          { type: 'image-grid', urls: ['/assets/project-img/sawyer/sawyer-8.png', '/assets/project-img/sawyer/sawyer-12.png'] },
+          { type: 'image', url: '/assets/project-img/sawyer/sawyer-13.png', caption: 'Final screens' },
         ],
       },
     ],
@@ -136,7 +201,7 @@ export const projects: Project[] = [
     subtitle: 'IAT 481 Neuroscience Product Design',
     category: 'Product Design',
     description: 'A PTSD medical device and companion app designed to help users manage stress responses through biofeedback.',
-    image: '/assets/images/home-images/nodus.png',
+    image: '/assets/home-images/nodus.png',
     tags: ['Medical Device', 'Biofeedback', 'Research'],
     role: 'Product Designer',
     timeline: '1 Semester',
@@ -145,11 +210,17 @@ export const projects: Project[] = [
       {
         title: 'Overview',
         blocks: [
-          {
-            type: 'text',
-            content: 'Nodus is a wearable device and companion app designed to help PTSD patients recognize and manage stress responses through real-time biofeedback.',
-          },
-          { type: 'image', url: '/assets/images/project-img/nodus-overview.png', caption: 'Nodus device and app' },
+          { type: 'image', url: '/assets/project-img/nodus/Nodus_Cover.png', caption: 'Nodus cover' },
+          { type: 'text', content: 'Nodus is a wearable device and companion app designed to help PTSD patients recognize and manage stress responses through real-time biofeedback.' },
+        ],
+      },
+      {
+        title: 'Process',
+        blocks: [
+          { type: 'image-grid', urls: ['/assets/project-img/nodus/nodus-1.png', '/assets/project-img/nodus/nodus-2.png'] },
+          { type: 'image-grid', urls: ['/assets/project-img/nodus/nodus-3.png', '/assets/project-img/nodus/nodus-4.png'] },
+          { type: 'image-grid', urls: ['/assets/project-img/nodus/nodus-5.png', '/assets/project-img/nodus/nodus-6.png'] },
+          { type: 'image', url: '/assets/project-img/nodus/nodus-7.png', caption: 'Final prototype' },
         ],
       },
     ],
@@ -162,7 +233,7 @@ export const projects: Project[] = [
     subtitle: 'IAT 334 Existing App Feature Design',
     category: 'UX Case Study',
     description: 'A redesign of TD Bank\'s MySpend feature to improve financial literacy and spending awareness for young adults.',
-    image: '/assets/images/home-images/TDMySpend.png',
+    image: '/assets/home-images/TDMySpend.png',
     tags: ['FinTech', 'Redesign', 'Mobile'],
     role: 'UX Designer',
     timeline: '6 Weeks',
@@ -171,11 +242,22 @@ export const projects: Project[] = [
       {
         title: 'Overview',
         blocks: [
-          {
-            type: 'text',
-            content: "TD MySpend's existing interface lacked clarity for young adult users trying to understand their spending habits. This redesign focused on surfacing actionable insights.",
-          },
-          { type: 'image', url: '/assets/images/project-img/tdmyspend-overview.png', caption: 'TD MySpend redesign screens' },
+          { type: 'image', url: '/assets/project-img/tdmyspend/TDMySpend_Cover.png', caption: 'TD MySpend cover' },
+          { type: 'text', content: "TD MySpend's existing interface lacked clarity for young adult users trying to understand their spending habits. This redesign focused on surfacing actionable insights." },
+        ],
+      },
+      {
+        title: 'Process',
+        blocks: [
+          { type: 'image', url: '/assets/project-img/tdmyspend/TD_Project_Page_01.png' },
+          { type: 'image', url: '/assets/project-img/tdmyspend/TD_Project_Page_02.png' },
+          { type: 'image', url: '/assets/project-img/tdmyspend/TD_Project_Page_03.png' },
+          { type: 'image', url: '/assets/project-img/tdmyspend/TD_Project_Page_04.png' },
+          { type: 'image', url: '/assets/project-img/tdmyspend/TD_Project_Page_05.png' },
+          { type: 'image', url: '/assets/project-img/tdmyspend/TD_Project_Page_06.png' },
+          { type: 'image', url: '/assets/project-img/tdmyspend/TD_Project_Page_07.png' },
+          { type: 'image', url: '/assets/project-img/tdmyspend/TD_Project_Page_08.png' },
+          { type: 'image', url: '/assets/project-img/tdmyspend/TD_Project_Page_09.png' },
         ],
       },
     ],
@@ -188,7 +270,7 @@ export const projects: Project[] = [
     subtitle: 'IAT 334 School Project',
     category: 'App Design',
     description: 'A grocery delivery app concept focused on reducing food waste by connecting consumers with surplus produce from local farms.',
-    image: '/assets/images/home-images/GroceryVan.png',
+    image: '/assets/home-images/GroceryVan.png',
     tags: ['Sustainability', 'Mobile App', 'E-commerce'],
     role: 'UI/UX Designer',
     timeline: '1 Semester',
@@ -197,11 +279,15 @@ export const projects: Project[] = [
       {
         title: 'Overview',
         blocks: [
-          {
-            type: 'text',
-            content: 'GroceryVan connects consumers with surplus produce from local farms, reducing food waste while providing affordable fresh groceries.',
-          },
-          { type: 'image', url: '/assets/images/project-img/groceryvan-overview.png', caption: 'GroceryVan app screens' },
+          { type: 'image', url: '/assets/project-img/grocery-van/GroceryVan_Cover.png', caption: 'GroceryVan cover' },
+          { type: 'text', content: 'GroceryVan connects consumers with surplus produce from local farms, reducing food waste while providing affordable fresh groceries.' },
+        ],
+      },
+      {
+        title: 'Process',
+        blocks: [
+          { type: 'image-grid', urls: ['/assets/project-img/grocery-van/grocery-van-1.png', '/assets/project-img/grocery-van/grocery-van-2.png'] },
+          { type: 'image-grid', urls: ['/assets/project-img/grocery-van/grocery-van-3.png', '/assets/project-img/grocery-van/grocery-van-4.png'] },
         ],
       },
     ],
@@ -214,7 +300,7 @@ export const projects: Project[] = [
     subtitle: 'Personal Project',
     category: 'UX Design',
     description: 'A mental wellness app concept designed to help users reconnect with their sense of self through guided journaling and reflection.',
-    image: '/assets/images/project-img/findingyou-cover.png',
+    image: '/assets/home-images/FindingYou.png',
     tags: ['Mental Health', 'Mobile App', 'Journaling'],
     role: 'UX/UI Designer',
     timeline: '4 Weeks',
@@ -223,11 +309,19 @@ export const projects: Project[] = [
       {
         title: 'Overview',
         blocks: [
-          {
-            type: 'text',
-            content: 'Finding You is a mental wellness app that guides users through structured self-reflection exercises to help them reconnect with their values and goals.',
-          },
-          { type: 'image', url: '/assets/images/project-img/findingyou-overview.png', caption: 'Finding You app screens' },
+          { type: 'image', url: '/assets/project-img/finding-you/FindingYou_Cover.png', caption: 'Finding You cover' },
+          { type: 'text', content: 'Finding You is a mental wellness app that guides users through structured self-reflection exercises to help them reconnect with their values and goals.' },
+        ],
+      },
+      {
+        title: 'Process',
+        blocks: [
+          { type: 'image-grid', urls: ['/assets/project-img/finding-you/finding-you-1.jpg', '/assets/project-img/finding-you/finding-you-2.jpg'] },
+          { type: 'image-grid', urls: ['/assets/project-img/finding-you/finding-you-3.jpg', '/assets/project-img/finding-you/finding-you-4.jpg'] },
+          { type: 'image-grid', urls: ['/assets/project-img/finding-you/finding-you-5.jpg', '/assets/project-img/finding-you/finding-you-6.jpg'] },
+          { type: 'image-grid', urls: ['/assets/project-img/finding-you/finding-you-7.jpg', '/assets/project-img/finding-you/finding-you-8.jpg'] },
+          { type: 'image-grid', urls: ['/assets/project-img/finding-you/finding-you-9.png', '/assets/project-img/finding-you/finding-you-10.png'] },
+          { type: 'image-grid', urls: ['/assets/project-img/finding-you/finding-you-11.png', '/assets/project-img/finding-you/finding-you-12.png'] },
         ],
       },
     ],
@@ -240,7 +334,7 @@ export const projects: Project[] = [
     subtitle: 'Personal Project',
     category: 'App Design',
     description: 'A travel planning app that helps solo travellers build itineraries collaboratively with AI-powered suggestions.',
-    image: '/assets/images/home-images/Jett.png',
+    image: '/assets/home-images/Jett.png',
     tags: ['Travel', 'Mobile App', 'AI'],
     role: 'UI/UX Designer',
     timeline: '3 Weeks',
@@ -249,11 +343,16 @@ export const projects: Project[] = [
       {
         title: 'Overview',
         blocks: [
-          {
-            type: 'text',
-            content: 'Jett is a travel planning app that combines AI-powered itinerary suggestions with collaborative planning tools for solo and group travellers.',
-          },
-          { type: 'image', url: '/assets/images/project-img/jett-overview.png', caption: 'Jett app screens' },
+          { type: 'image', url: '/assets/project-img/jett/Jett_Cover.png', caption: 'Jett cover' },
+          { type: 'text', content: 'Jett is a travel planning app that combines AI-powered itinerary suggestions with collaborative planning tools for solo and group travellers.' },
+        ],
+      },
+      {
+        title: 'Process',
+        blocks: [
+          { type: 'image', url: '/assets/project-img/jett/Jett_Behind.png', caption: 'Behind the scenes' },
+          { type: 'image-grid', urls: ['/assets/project-img/jett/Final - Poster.png', '/assets/project-img/jett/Final - Prop Poster.png'] },
+          { type: 'image', url: '/assets/project-img/jett/Kunai.png', caption: 'Character design' },
         ],
       },
     ],
@@ -266,7 +365,7 @@ export const projects: Project[] = [
     subtitle: 'Personal Coding Project',
     category: 'Development',
     description: 'A fully functional Tic Tac Toe game built with vanilla JavaScript, HTML, and CSS as a front-end development exercise.',
-    image: '/assets/images/project-img/tictactoe-cover.png',
+    image: '/assets/home-images/TicTacToe.png',
     tags: ['JavaScript', 'HTML/CSS', 'Game'],
     role: 'Developer',
     timeline: '1 Week',
@@ -275,10 +374,20 @@ export const projects: Project[] = [
       {
         title: 'Overview',
         blocks: [
-          {
-            type: 'text',
-            content: 'A classic Tic Tac Toe game built from scratch with vanilla JavaScript. This project was a hands-on exercise in DOM manipulation, game state management, and clean UI design.',
-          },
+          { type: 'image', url: '/assets/project-img/tictactoe/TicTacToe_Cover.png', caption: 'Tic Tac Toe cover' },
+          { type: 'text', content: 'A classic Tic Tac Toe game built from scratch with vanilla JavaScript. This project was a hands-on exercise in DOM manipulation, game state management, and clean UI design.' },
+        ],
+      },
+      {
+        title: 'Process',
+        blocks: [
+          { type: 'image', url: '/assets/project-img/tictactoe/Final_Poster.png', caption: 'Final poster' },
+          { type: 'image', url: '/assets/project-img/tictactoe/moodboard.png', caption: 'Mood board' },
+          { type: 'image-grid', urls: ['/assets/project-img/tictactoe/sketch1.png', '/assets/project-img/tictactoe/sketch2.png'] },
+          { type: 'image-grid', urls: ['/assets/project-img/tictactoe/process1.png', '/assets/project-img/tictactoe/final-1.png'] },
+          { type: 'image-grid', urls: ['/assets/project-img/tictactoe/final-2.png', '/assets/project-img/tictactoe/final-3.png'] },
+          { type: 'image-grid', urls: ['/assets/project-img/tictactoe/final-4.png', '/assets/project-img/tictactoe/final-5.png'] },
+          { type: 'image', url: '/assets/project-img/tictactoe/final-6.png', caption: 'Final result' },
         ],
       },
     ],
