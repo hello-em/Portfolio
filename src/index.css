@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "DM Serif Display", ui-serif, Georgia, serif;
+  --color-brand: #139C7D;
+}
+
+@utility transition-colours {
+  @apply transition-colors;
+}
+
+/* Tailwind 4 Dark Mode Class Support */
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans antialiased transition-colours duration-300;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    html, body, a, button, [role="button"], .cursor-pointer {
+      cursor: none !important;
+    }
+  }
+
+  h1, h2, h3 {
+    @apply font-serif;
+  }
+}
+
+/* Liquid wave fill button */
+@keyframes wave-shift {
+  0%   { transform: translateX(0) translateY(0); }
+  50%  { transform: translateX(-25%) translateY(0); }
+  100% { transform: translateX(-50%) translateY(0); }
+}
+
+.liquid-btn .liquid-fill {
+  transition: top 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.liquid-btn:hover .liquid-fill {
+  top: -30%;
+}
+
+.liquid-btn .wave-svg {
+  animation: wave-shift 1.4s linear infinite;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 9999;
+}
