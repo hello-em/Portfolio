@@ -23,12 +23,35 @@
     @apply font-sans antialiased transition-colours duration-300;
   }
 
+  @media (hover: hover) and (pointer: fine) {
+    html, body, a, button, [role="button"], .cursor-pointer {
+      cursor: none !important;
+    }
+  }
+
   h1, h2, h3 {
     @apply font-serif;
   }
 }
 
-/* View Transition API - Liquid Animation */
+/* Liquid wave fill button */
+@keyframes wave-shift {
+  0%   { transform: translateX(0) translateY(0); }
+  50%  { transform: translateX(-25%) translateY(0); }
+  100% { transform: translateX(-50%) translateY(0); }
+}
+
+.liquid-btn .liquid-fill {
+  transition: top 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.liquid-btn:hover .liquid-fill {
+  top: -30%;
+}
+
+.liquid-btn .wave-svg {
+  animation: wave-shift 1.4s linear infinite;
+}
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;

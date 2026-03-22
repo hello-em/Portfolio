@@ -1,5 +1,4 @@
 import { motion } from 'motion/react';
-import { Link } from 'react-router-dom';
 import { featuredProjects } from '../data/projects';
 import ProjectCard from '../components/ProjectCard';
 
@@ -23,18 +22,6 @@ export default function Home() {
             <p className="text-xl text-zinc-500 dark:text-zinc-400 max-w-xl leading-relaxed mb-6">
               Based in Vancouver, BC. A graduate from Simon Fraser University and Brainstation UX Design.
             </p>
-            <p className="text-zinc-400 dark:text-zinc-500 mb-8">
-              Pssst, I got more content I did before &rarr;{' '}
-              <Link to="/archive" className="underline hover:text-brand transition-colours">
-                Archive Projects
-              </Link>
-            </p>
-            <Link
-              to="/about"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-black/10 dark:border-white/10 rounded-full text-sm font-medium uppercase tracking-widest hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colours"
-            >
-              About me →
-            </Link>
           </motion.div>
         </section>
 
@@ -45,30 +32,6 @@ export default function Home() {
           ))}
         </section>
 
-        {/* Footer CTA */}
-        <section className="mt-48 py-32 border-t border-black/5 dark:border-white/5">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
-            <div>
-              <h2 className="text-4xl font-serif tracking-tight mb-4">Let's build something together.</h2>
-              <p className="text-zinc-500 dark:text-zinc-400 mb-6">
-                Currently open to new opportunities and collaborations.
-              </p>
-              <Link
-                to="/archive"
-                className="text-sm font-bold uppercase tracking-widest text-zinc-400 hover:text-brand transition-colours group inline-flex items-center gap-2"
-              >
-                View Archive Projects{' '}
-                <span className="transition-transform group-hover:translate-x-1">→</span>
-              </Link>
-            </div>
-            <a
-              href="mailto:hello.li.emily@gmail.com"
-              className="group relative px-8 py-4 bg-black dark:bg-white text-white dark:text-black rounded-full overflow-hidden transition-transform hover:scale-105 active:scale-95 font-medium"
-            >
-              Get in touch
-            </a>
-          </div>
-        </section>
       </div>
     </main>
   );

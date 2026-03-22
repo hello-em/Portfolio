@@ -3,7 +3,8 @@ export type ProjectBlock =
   | { type: 'image'; url: string; caption?: string }
   | { type: 'image-grid'; urls: string[] }
   | { type: 'figma-embed'; url: string; caption?: string }
-  | { type: 'video'; url: string; caption?: string; poster?: string };
+  | { type: 'video'; url: string; caption?: string; poster?: string }
+  | { type: 'instagram-embed'; url: string; caption?: string };
 
 export interface ProjectSection {
   title: string;

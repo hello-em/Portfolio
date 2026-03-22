@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowLeft, Calendar, User } from 'lucide-react';
+import { ArrowLeft, Calendar, User, ZoomIn } from 'lucide-react';
 import { projects, featuredProjects } from '../data/projects';
 import Lightbox from '../components/Lightbox';
 import { ProjectBlock } from '../types';
@@ -40,10 +40,14 @@ export default function ProjectDetail() {
           className="space-y-4"
         >
           <div
-            className="rounded-3xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 cursor-zoom-in"
+            className="group relative rounded-3xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 cursor-zoom-in transition-transform duration-700 hover:scale-[1.02] transform-gpu"
             onClick={() => setLightbox({ url: block.url, caption: block.caption })}
           >
             <img src={block.url} alt={block.caption || 'Project image'} className="w-full object-cover" />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 dark:group-hover:bg-white/5 transition-colors duration-300" />
+            <div className="absolute top-4 right-4 h-10 w-10 rounded-full bg-white dark:bg-zinc-800 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+              <ZoomIn className="w-5 h-5" />
+            </div>
           </div>
           {block.caption && (
             <p className="text-sm text-zinc-400 italic text-center">{block.caption}</p>
@@ -57,10 +61,14 @@ export default function ProjectDetail() {
           {block.urls.map((url, i) => (
             <div
               key={i}
-              className="rounded-3xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 cursor-zoom-in"
+              className="group relative rounded-3xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 cursor-zoom-in transition-transform duration-700 hover:scale-[1.02] transform-gpu"
               onClick={() => setLightbox({ url })}
             >
               <img src={url} alt={`Grid image ${i + 1}`} className="w-full object-cover" />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 dark:group-hover:bg-white/5 transition-colors duration-300" />
+              <div className="absolute top-4 right-4 h-10 w-10 rounded-full bg-white dark:bg-zinc-800 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+                <ZoomIn className="w-5 h-5" />
+              </div>
             </div>
           ))}
         </div>
@@ -76,8 +84,40 @@ export default function ProjectDetail() {
     if (block.type === 'video') {
       return (
         <div key={blockIndex} className="space-y-4">
-          <div className="rounded-3xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
-            <video src={block.url} poster={block.poster} controls className="w-full aspect-video object-cover" />
+          <div className="rounded-3xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 aspect-video">
+            {block.url.includes('youtube.com/embed') ? (
+              <iframe
+                src={block.url}
+                title={block.caption || 'Video'}
+                width="100%"
+                height="100%"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            ) : (
+              <video src={block.url} poster={block.poster} controls className="w-full aspect-video object-cover" />
+            )}
+          </div>
+          {block.caption && <p className="text-sm text-zinc-400 italic text-center">{block.caption}</p>}
+        </div>
+      );
+    }
+    if (block.type === 'instagram-embed') {
+      // Convert post URL to embed URL: /p/CODE/ → /p/CODE/embed/
+      const embedUrl = block.url.replace(/\/$/, '') + '/embed/';
+      return (
+        <div key={blockIndex} className="space-y-4 flex flex-col items-center">
+          <div className="rounded-3xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 w-full max-w-sm">
+            <iframe
+              src={embedUrl}
+              title={block.caption || 'Instagram reel'}
+              width="100%"
+              style={{ aspectRatio: '9/16', border: 'none', display: 'block' }}
+              scrolling="no"
+              allowTransparency
+              allowFullScreen
+            />
           </div>
           {block.caption && <p className="text-sm text-zinc-400 italic text-center">{block.caption}</p>}
         </div>
@@ -123,7 +163,7 @@ export default function ProjectDetail() {
           </div>
           <div className="space-y-1">
             <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 dark:text-zinc-500">Tags</span>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-col gap-1">
               {project.tags.map((tag) => (
                 <span key={tag} className="text-sm font-medium">{tag}</span>
               ))}
