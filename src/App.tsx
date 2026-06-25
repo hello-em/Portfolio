@@ -7,7 +7,6 @@ import CustomCursor from './components/CustomCursor';
 import FloatingScrollToTop from './components/FloatingScrollToTop';
 import Home from './pages/Home';
 import About from './pages/About';
-import Archive from './pages/Archive';
 import ProjectDetail from './pages/ProjectDetail';
 import FreelanceWork from './pages/FreelanceWork';
 
@@ -23,7 +22,6 @@ export default function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
-              <Route path="/archive" element={<Archive />} />
               <Route path="/freelance" element={<FreelanceWork />} />
               <Route path="/project/:id" element={<ProjectDetail />} />
               {/* Catch-all redirect to home */}

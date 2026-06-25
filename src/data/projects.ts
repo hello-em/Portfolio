@@ -218,7 +218,7 @@ export const projects: Project[] = [
     tags: ['Medical Device', 'Biofeedback', 'Research'],
     role: 'Product Designer',
     timeline: '1 Semester',
-    tools: ['Figma', 'Arduino', 'Miro'],
+    tools: ['Figma', 'Arduino'],
     sections: [
       {
         title: 'Overview',
@@ -243,11 +243,11 @@ export const projects: Project[] = [
   {
     id: 'td-myspend',
     title: 'TD MySpend',
-    subtitle: 'IAT 334 Existing App Feature Design',
+    subtitle: 'SFU SIAT 334 - Interface Design',
     category: 'UX Case Study',
     description: 'A redesign of TD Bank\'s MySpend feature to improve financial literacy and spending awareness for young adults.',
     image: '/assets/home-images/TDMySpend.png',
-    tags: ['FinTech', 'Redesign', 'Mobile'],
+    tags: ['Redesign', 'Mobile'],
     role: 'UX Designer',
     timeline: '6 Weeks',
     tools: ['Figma', 'Maze'],
@@ -280,14 +280,14 @@ export const projects: Project[] = [
   {
     id: 'grocery-van',
     title: 'GroceryVan',
-    subtitle: 'IAT 334 School Project',
-    category: 'App Design',
-    description: 'A grocery delivery app concept focused on reducing food waste by connecting consumers with surplus produce from local farms.',
+    subtitle: 'SFU SIAT 339 - Web Design and Development',
+    category: 'Website Design',
+    description: 'For this project, the goal is build a fully funcational front-end ecommerce website using HTML5 and CSS.',
     image: '/assets/home-images/GroceryVan.png',
-    tags: ['Sustainability', 'Mobile App', 'E-commerce'],
-    role: 'UI/UX Designer',
+    tags: ['Front-End', 'Website Design', 'E-commerce'],
+    role: 'Front-End Developer',
     timeline: '1 Semester',
-    tools: ['Figma', 'Miro'],
+    tools: ['GitKraken'],
     sections: [
       {
         title: 'Overview',
@@ -311,13 +311,13 @@ export const projects: Project[] = [
     id: 'finding-you',
     title: 'Finding You',
     subtitle: 'Personal Project',
-    category: 'UX Design',
-    description: 'A mental wellness app concept designed to help users reconnect with their sense of self through guided journaling and reflection.',
+    category: 'Short Film',
+    description: 'My role in this film [Finding You] was the main editor and co-director. My job was to make sure the team was on track during production. In post-production, I made the most of decisions with editing and story changes.',
     image: '/assets/home-images/FindingYou.png',
-    tags: ['Mental Health', 'Mobile App', 'Journaling'],
-    role: 'UX/UI Designer',
+    tags: ['Story Telling'],
+    role: 'Editor, Director',
     timeline: '4 Weeks',
-    tools: ['Figma'],
+    tools: ['Adobe Premiere Pro'],
     sections: [
       {
         title: 'Overview',
@@ -339,19 +339,19 @@ export const projects: Project[] = [
       },
     ],
     reflection:
-      'Designing for mental wellness required me to be especially thoughtful about tone, language, and the emotional weight of every interaction.',
+      'As my first narrative short film, I learnt a lot about film production and team cooperation. It takes a lot of planning and understanding of the equipments to produce a well executed film. The biggest takeaway from this experience is the pre-production planning. A well-structured timeline of your project can lessen the stress on production and post-production.',
   },
   {
     id: 'jett',
     title: 'Jett',
-    subtitle: 'Personal Project',
-    category: 'App Design',
-    description: 'A travel planning app that helps solo travellers build itineraries collaboratively with AI-powered suggestions.',
+    subtitle: 'SFU SIAT 336 - Material Design',
+    category: 'Product/Prop Design',
+    description: 'My team had chosen Jett from the popular FPS game VALORANT. We really liked her look and style in the game. As a team of 4, we made Jetts Kunais, a vandal gun, her cropped vest, and her belt.',
     image: '/assets/home-images/Jett.png',
-    tags: ['Travel', 'Mobile App', 'AI'],
-    role: 'UI/UX Designer',
+    tags: ['Cosplay', 'Costume', 'Valorant'],
+    role: '3D Designer',
     timeline: '3 Weeks',
-    tools: ['Figma'],
+    tools: ['Blender', 'Cura'],
     sections: [
       {
         title: 'Overview',
@@ -370,19 +370,19 @@ export const projects: Project[] = [
       },
     ],
     reflection:
-      'Exploring AI-assisted UX flows pushed me to think carefully about when automation helps users and when it removes meaningful agency.',
+      'This project was my first time using the 3D printer at school. It was also the first time working with mayh different materials like EVA foam. Throughout the process, I learnt that it is important to do ample research on material and test different products together before trying it on the finish materials. For more in depth break down of the cosplay pieces',
   },
   {
     id: 'tic-tac-toe',
     title: 'Tic Tac Toe',
-    subtitle: 'Personal Coding Project',
-    category: 'Development',
-    description: 'A fully functional Tic Tac Toe game built with vanilla JavaScript, HTML, and CSS as a front-end development exercise.',
+    subtitle: 'SFU SIAT 336 - Material Design',
+    category: 'Product Design',
+    description: 'Create an interactive piece that aligns with our choosen design company',
     image: '/assets/home-images/TicTacToe.png',
-    tags: ['JavaScript', 'HTML/CSS', 'Game'],
+    tags: ['Pen & Paper', 'hands-on building'],
     role: 'Developer',
     timeline: '1 Week',
-    tools: ['VS Code', 'JavaScript'],
+    tools: ['drill', 'Saw', 'resin'],
     sections: [
       {
         title: 'Overview',
@@ -405,7 +405,7 @@ export const projects: Project[] = [
       },
     ],
     reflection:
-      'Building a game from scratch without frameworks gave me a much deeper appreciation for what libraries and frameworks actually solve.',
+      'Building a phyiscal item requires trial and error and measuring',
   },
 ];
 
