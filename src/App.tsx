@@ -16,18 +16,22 @@ export default function App() {
       <Router>
         <CustomCursor />
         <ScrollToTop />
-        <div className="min-h-screen flex flex-col bg-[#fdfdfd] text-black dark:bg-[#0d1117] dark:text-white selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black transition-colours duration-300 font-sans">
-          <Navbar />
-          <main className="flex-grow">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/freelance" element={<FreelanceWork />} />
-              <Route path="/project/:id" element={<ProjectDetail />} />
-              {/* Catch-all redirect to home */}
-              <Route path="*" element={<Home />} />
-            </Routes>
-          </main>
+        <div className="min-h-screen flex flex-col bg-[#fdfdfd] text-black dark:bg-[#0d1117] dark:text-white selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black transition-colors duration-300 font-sans">
+          {/* Sidebar + page content sit side-by-side; footer is outside so it spans full width */}
+          <div className="flex flex-1">
+            {/* Navbar renders the sticky sidebar on desktop, top bar on mobile */}
+            <Navbar />
+            <main className="flex-1 min-w-0">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/freelance" element={<FreelanceWork />} />
+                <Route path="/project/:id" element={<ProjectDetail />} />
+                <Route path="*" element={<Home />} />
+              </Routes>
+            </main>
+          </div>
+          {/* Footer is outside the flex row — spans the full page width */}
           <Footer />
           <FloatingScrollToTop />
         </div>

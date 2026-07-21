@@ -8,9 +8,9 @@ export default function Footer() {
     <>
       <ArchiveDrawer isOpen={archiveOpen} onClose={() => setArchiveOpen(false)} />
 
-      <footer className="border-t border-black/5 dark:border-white/5">
+      <footer className="border-t border-black/5 dark:border-white/5 w-full">
         {/* CTA */}
-        <div className="max-w-7xl mx-auto px-6 py-24 flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+        <div className="px-12 py-24 flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
           <div>
             <h2 className="text-4xl font-serif tracking-tight mb-4">Let's build something together.</h2>
             <p className="text-zinc-500 dark:text-zinc-400 mb-6">Currently open to new opportunities and collaborations.</p>
@@ -48,7 +48,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-black/5 dark:border-white/5">
-          <div className="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-zinc-400 font-medium">
+          <div className="px-12 py-12 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-zinc-400 font-medium">
             <div className="flex flex-col gap-1 items-center md:items-start">
               <p className="text-xs">© {new Date().getFullYear()} Emily Li. All rights reserved.</p>
               <p className="text-xs opacity-50">Created through Vibe Coding and Designed with old Bootstrap template in mind</p>

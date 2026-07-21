@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, useMotionValue, useSpring } from 'motion/react';
 
 export default function CustomCursor() {
   const [isHovering, setIsHovering] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobileRef = useRef(false);
 
   const mouseX = useMotionValue(-100);
   const mouseY = useMotionValue(-100);
@@ -14,17 +14,14 @@ export default function CustomCursor() {
   const circleY = useSpring(mouseY, springConfig);
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile('ontouchstart' in window || navigator.maxTouchPoints > 0);
-    };
-
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
+    // Check for touch device once
+    isMobileRef.current = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    if (isMobileRef.current) return;
 
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
-      if (!isVisible && !isMobile) setIsVisible(true);
+      setIsVisible(true);
     };
 
     const handleMouseOver = (e: MouseEvent) => {
@@ -39,7 +36,7 @@ export default function CustomCursor() {
     };
 
     const handleMouseLeave = () => setIsVisible(false);
-    const handleMouseEnter = () => { if (!isMobile) setIsVisible(true); };
+    const handleMouseEnter = () => setIsVisible(true);
 
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('mouseover', handleMouseOver);
@@ -47,36 +44,34 @@ export default function CustomCursor() {
     document.addEventListener('mouseenter', handleMouseEnter);
 
     return () => {
-      window.removeEventListener('resize', checkMobile);
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mouseover', handleMouseOver);
       document.removeEventListener('mouseleave', handleMouseLeave);
       document.removeEventListener('mouseenter', handleMouseEnter);
     };
-  }, [mouseX, mouseY, isVisible, isMobile]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  if (!isVisible || isMobile) return null;
+  if (isMobileRef.current || !isVisible) return null;
 
   return (
     <>
       {/* Inner dot */}
       <motion.div
-        className="fixed top-0 left-0 w-3 h-3 bg-brand rounded-full pointer-events-none z-[9999]"
+        className="fixed top-0 left-0 w-2.5 h-2.5 bg-brand rounded-full pointer-events-none z-[9999]"
         style={{ x: mouseX, y: mouseY, translateX: '-50%', translateY: '-50%' }}
       />
       {/* Outer ring */}
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 border-brand rounded-full pointer-events-none z-[9998]"
+        className="fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[9998] border border-brand"
         animate={{
           scale: isHovering ? 2.2 : 1,
-          opacity: isHovering ? 0.5 : 1,
-          borderWidth: isHovering ? '1px' : '0.5px',
+          opacity: isHovering ? 0.4 : 0.7,
         }}
         style={{ x: circleX, y: circleY, translateX: '-50%', translateY: '-50%' }}
         transition={{
           scale: { type: 'spring', damping: 15, stiffness: 200 },
           opacity: { duration: 0.2 },
-          borderWidth: { duration: 0.2 },
         }}
       />
     </>
