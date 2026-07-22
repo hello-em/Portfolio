@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { featuredProjects } from '../data/projects';
 import ProjectCard from '../components/ProjectCard';
 
-const WORDS = ['creative', 'designer', 'creator'];
+const WORDS = ['designer}', 'creator;', 'dreamer.'];
 const TYPE_SPEED = 90;   // ms per character typed
 const DELETE_SPEED = 55; // ms per character deleted
 const PAUSE_AFTER_TYPE = 1800; // ms to hold the full word
@@ -74,11 +74,11 @@ export default function Home() {
               </span>
               <br />
               <span className="italic text-zinc-400 dark:text-zinc-600">
-                in UX &amp; UI design, video editing,<br />and more
+                in UX &amp; UI design, video editing,<br/>and more
               </span>
             </h1>
-            <p className="text-base text-zinc-500 dark:text-zinc-400 max-w-sm leading-relaxed">
-              Based in Vancouver, BC. A graduate from Simon Fraser University and Brainstation UX Design.
+            <p className="text-base text-zinc-500 dark:text-zinc-400 max-w-m leading-relaxed">
+              Based in Vancouver, BC.<br/> A graduate from Simon Fraser University(SIAT) and Brainstation UX Design.
             </p>
           </motion.div>
         </section>

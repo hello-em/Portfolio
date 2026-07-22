@@ -1,12 +1,22 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTheme } from '../context/ThemeContext';
 import { Moon, Sun, Menu, X } from 'lucide-react';
+import type { SpawnPayload } from './LetterPhysics';
 
-export default function Navbar() {
+const INPUT_FONT_SIZE   = 26; // must match FONT_SIZE in LetterPhysics
+const INPUT_FONT_FAMILY = '"KandiLetterBeads", serif';
+
+interface NavbarProps {
+  onSubmitMessage?: (letters: SpawnPayload[]) => void;
+}
+
+export default function Navbar({ onSubmitMessage }: NavbarProps) {
   const { theme, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
+  const [msgValue, setMsgValue] = useState('');
+  const inputRef = useRef<HTMLInputElement>(null);
   const location = useLocation();
 
   useEffect(() => { setIsOpen(false); }, [location]);
@@ -18,17 +28,53 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Work', path: '/' },
-    { name: 'About', path: '/about' },
+    { name: 'Who Am I?', path: '/about' },
   ];
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key !== 'Enter' || !msgValue.trim()) return;
+
+    const input = inputRef.current;
+    if (!input || !onSubmitMessage) { setMsgValue(''); return; }
+
+    const rect = input.getBoundingClientRect();
+    const centerY = rect.top + rect.height / 2;
+
+    // Measure each character's centre X using a canvas matching the input font
+    const mc = document.createElement('canvas');
+    const mCtx = mc.getContext('2d')!;
+    mCtx.font = `${INPUT_FONT_SIZE}px ${INPUT_FONT_FAMILY}`;
+
+    const text    = msgValue.trim();
+    const totalW  = mCtx.measureText(text).width;
+    // Input is centred — start offset is the left edge of the text block
+    const startX  = rect.left + rect.width / 2 - totalW / 2;
+
+    const payloads: SpawnPayload[] = [];
+    let cursorX = startX;
+
+    for (const char of text) {
+      const charW = mCtx.measureText(char).width;
+      payloads.push({
+        char,
+        screenX: cursorX + charW / 2, // centre of this character
+        screenY: centerY,
+      });
+      cursorX += charW;
+    }
+
+    onSubmitMessage(payloads);
+    setMsgValue('');
+  };
 
   return (
     <>
       {/* ── Vertical sidebar (desktop) ── */}
       <nav
         aria-label="Main navigation"
-        className="hidden md:flex sticky top-0 self-start h-screen w-[18rem] z-[100] flex-col items-center pt-16 pb-12
+        className="hidden md:flex fixed top-0 left-0 h-screen w-[18rem] z-[100] flex-col items-center pt-16 pb-12
                    bg-[#fdfdfd]/90 dark:bg-[#0d1117]/90 backdrop-blur-md
-                   border-r border-black/5 dark:border-white/5 transition-colors duration-300 shrink-0"
+                   border-r border-black/5 dark:border-white/5 transition-colors duration-300"
       >
         {/* Logo */}
         <Link
@@ -61,7 +107,7 @@ export default function Navbar() {
             href="mailto:hello.li.emily@gmail.com"
             className="hover:text-brand/70 text-zinc-500 dark:text-zinc-400 transition-colors"
           >
-            Contact
+            Email me
           </a>
 
           {/* Theme toggle sits right below the nav links */}
@@ -73,18 +119,22 @@ export default function Navbar() {
             {theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
           </button>
 
-          {/* MSG^HERE — Kandi font text input */}
+          {/* LEAVE^A^MSG — Kandi font text input, Enter launches physics letters */}
           <div className="relative mt-2 w-full px-4">
             <input
+              ref={inputRef}
               type="text"
               maxLength={32}
-              placeholder="MSG^HERE"
+              placeholder="LEAVE_A^MSG"
+              value={msgValue}
+              onChange={(e) => setMsgValue(e.target.value)}
+              onKeyDown={handleKeyDown}
               className="w-full bg-transparent border-none outline-none text-center text-[1.55rem] tracking-normal font-kandi caret-brand
                          text-zinc-800 dark:text-zinc-200
                          placeholder:text-zinc-400 dark:placeholder:text-zinc-600
                          focus:placeholder:opacity-0
                          transition-colors cursor-text"
-              aria-label="Leave a message"
+              aria-label="Leave a message — press Enter to launch"
             />
           </div>
         </div>

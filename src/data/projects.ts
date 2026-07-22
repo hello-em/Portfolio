@@ -343,7 +343,7 @@ export const projects: Project[] = [
   },
   {
     id: 'jett',
-    title: 'Jett',
+    title: 'Valorant: Jett',
     subtitle: 'SFU SIAT 336 - Material Design',
     category: 'Product/Prop Design',
     description: 'My team had chosen Jett from the popular FPS game VALORANT. We really liked her look and style in the game. As a team of 4, we made Jetts Kunais, a vandal gun, her cropped vest, and her belt.',
