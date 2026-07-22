@@ -54,8 +54,8 @@ export default function Footer() {
               <p className="text-xs opacity-50">Created through Vibe Coding and Designed with old Bootstrap template in mind</p>
             </div>
             <div className="flex gap-8 uppercase tracking-widest text-xs">
-              <a href="https://helloemerie.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand transition-colours">Old Portfolio</a>
-              <a href="https://www.linkedin.com/in/helloemerie" target="_blank" rel="noopener noreferrer" className="hover:text-brand transition-colours">LinkedIn</a>
+              <a href="old_portfolio.html" target="_blank" rel="noopener noreferrer" className="hover:text-brand transition-colours">Old Portfolio</a>
+              <a href="../../https://www.linkedin.com/in/helloemerie" target="_blank" rel="noopener noreferrer" className="hover:text-brand transition-colours">LinkedIn</a>
               <a href="https://www.instagram.com/hello.emerie/" target="_blank" rel="noopener noreferrer" className="hover:text-brand transition-colours">Instagram</a>
               <a href="https://github.com/hello-em" target="_blank" rel="noopener noreferrer" className="hover:text-brand transition-colours">GitHub</a>
             </div>

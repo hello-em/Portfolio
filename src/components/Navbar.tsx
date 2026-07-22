@@ -16,6 +16,7 @@ export default function Navbar({ onSubmitMessage }: NavbarProps) {
   const { theme, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [msgValue, setMsgValue] = useState('');
+  const [inputFocused, setInputFocused] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const location = useLocation();
 
@@ -125,10 +126,12 @@ export default function Navbar({ onSubmitMessage }: NavbarProps) {
               ref={inputRef}
               type="text"
               maxLength={32}
-              placeholder="LEAVE_A^MSG"
+              placeholder="LEAVE A MSG^"
               value={msgValue}
               onChange={(e) => setMsgValue(e.target.value)}
               onKeyDown={handleKeyDown}
+              onFocus={() => setInputFocused(true)}
+              onBlur={() => setInputFocused(false)}
               className="w-full bg-transparent border-none outline-none text-center text-[1.55rem] tracking-normal font-kandi caret-brand
                          text-zinc-800 dark:text-zinc-200
                          placeholder:text-zinc-400 dark:placeholder:text-zinc-600
@@ -136,6 +139,15 @@ export default function Navbar({ onSubmitMessage }: NavbarProps) {
                          transition-colors cursor-text"
               aria-label="Leave a message — press Enter to launch"
             />
+            {/* Enter hint — only visible when input is focused */}
+            {inputFocused && (
+              <span
+                className="absolute left-1/2 -translate-x-1/2 top-full mt-1 text-zinc-400 dark:text-zinc-600 text-base select-none pointer-events-none"
+                aria-hidden="true"
+              >
+                &#x23CE;
+              </span>
+            )}
           </div>
         </div>
       </nav>
