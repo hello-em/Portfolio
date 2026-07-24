@@ -2,7 +2,7 @@ import { useEffect, useRef, useCallback } from 'react';
 import Matter from 'matter-js';
 
 // ─── Tuneable constants ────────────────────────────────────────────────────────
-const FONT_SIZE    = 26; // must match FONT_SIZE in Navbar.tsx
+const FONT_SIZE    = 28; // must match FONT_SIZE in Navbar.tsx
 const FONT_FAMILY  = '"KandiLetterBeads", serif';
 const PADDING_X    = 1;
 const PADDING_Y    = 1;
@@ -108,6 +108,11 @@ export default function LetterPhysics({ registerSpawn }: LetterPhysicsProps) {
     }
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    const dpr = window.devicePixelRatio || 1;
+    ctx.save();
+    ctx.scale(dpr, dpr); // draw at logical pixel coordinates, output at physical resolution
+
     ctx.font         = `${FONT_SIZE}px ${FONT_FAMILY}`;
     ctx.textBaseline = 'middle';
     ctx.textAlign    = 'center';
@@ -119,6 +124,8 @@ export default function LetterPhysics({ registerSpawn }: LetterPhysicsProps) {
       ctx.fillText(char, 0, 0);
       ctx.restore();
     }
+
+    ctx.restore();
 
     rafRef.current = requestAnimationFrame(loop);
   }, []);
@@ -132,9 +139,19 @@ export default function LetterPhysics({ registerSpawn }: LetterPhysicsProps) {
     measureCtx.current = mc.getContext('2d');
 
     const resize = () => {
-      canvas.width  = window.innerWidth;
-      canvas.height = window.innerHeight;
-      rebuildBounds(window.innerWidth, window.innerHeight);
+      const dpr = window.devicePixelRatio || 1;
+      const w   = window.innerWidth;
+      const h   = window.innerHeight;
+
+      // Set the canvas backing store to physical pixels
+      canvas.width  = w * dpr;
+      canvas.height = h * dpr;
+
+      // Keep the CSS display size at logical pixels
+      canvas.style.width  = `${w}px`;
+      canvas.style.height = `${h}px`;
+
+      rebuildBounds(w, h);
     };
 
     resize();

@@ -5,7 +5,7 @@ import { useTheme } from '../context/ThemeContext';
 import { Moon, Sun, Menu, X } from 'lucide-react';
 import type { SpawnPayload } from './LetterPhysics';
 
-const INPUT_FONT_SIZE   = 26; // must match FONT_SIZE in LetterPhysics
+const INPUT_FONT_SIZE   = 28; // must match FONT_SIZE in LetterPhysics
 const INPUT_FONT_FAMILY = '"KandiLetterBeads", serif';
 
 interface NavbarProps {
