@@ -2,7 +2,7 @@ import { useEffect, useRef, useCallback } from 'react';
 import Matter from 'matter-js';
 
 // ─── Tuneable constants ────────────────────────────────────────────────────────
-const FONT_SIZE    = 26;
+const FONT_SIZE    = 26; // must match FONT_SIZE in Navbar.tsx
 const FONT_FAMILY  = '"KandiLetterBeads", serif';
 const PADDING_X    = 1;
 const PADDING_Y    = 1;
