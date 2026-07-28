@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams, Link, Navigate } from 'react-router-dom';
+import { useParams, Link, Navigate } from 'react-router';
 import { motion } from 'motion/react';
 import { ArrowLeft, Calendar, User, ZoomIn } from 'lucide-react';
 import { projects, featuredProjects } from '../data/projects';
