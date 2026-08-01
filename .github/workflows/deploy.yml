@@ -30,6 +30,9 @@ jobs:
       - name: Add nojekyll
         run: touch ./dist/.nojekyll
 
+      - name: Copy index.html to 404.html for GH Pages SPA routing
+        run: cp ./dist/index.html ./dist/404.html
+
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
