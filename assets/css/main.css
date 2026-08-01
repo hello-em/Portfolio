@@ -1,0 +1,463 @@
+/*
+
+  1. >>> Headr Style
+  2. >>> Banner Style
+  3. >>> About Style
+  4. >>> Project Style
+  5. >>> Footer Style
+  6. >>> My Added content that is a mess
+
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------*/
+html {
+	font-family: 'Inter', sans-serif;
+	--night-color: #0d1117;
+	--day-color: #fdfdfd;
+	--primary: #139C7D;
+	--secondary: #C9E1E3;
+	--night-background: radial-gradient(circle at top left, #0d1117, #000022);
+	--transition-time: 0.5s;
+}
+
+:root {
+	--font_14:0.875rem;
+	--font_16:1rem;
+	--font_30:1.875rem;
+	--font_36:2.25rem;
+	--font_48:3rem;
+	--40:2.5rem;
+	--30:1.875rem;
+	--margin_30:1.875rem;
+	--margin-54:3.375rem;
+	--margin-60:3.75rem;
+	--margin-100:6.25rem;
+	--margin-120:7.5rem;   
+}
+
+:root[color-mode="light"]{
+	--surface1: var(--day-color);
+	--surface2: white;
+	--surface3: #F4F4F4CC; /* Surface 3 is the translucent */
+	--element1: var(--night-color);
+	--element2: black;
+	--element3: #474747;
+	--fullbleed: var(--secondary);
+}
+
+:root[color-mode="dark"]{
+	--surface1: var(--night-color);
+	--surface2: #111111;
+	--surface3: #000000CC;
+	--element1: var(--day-color);
+	--element2: white;
+	--element3: #CFCFCF;
+	--fullbleed: var(--primary);
+}
+
+
+
+body {background-color: var(--surface1);  font-family: 'Inter', sans-serif;overflow-x: hidden; font-weight:400;font-style: normal; font-size: var(--font_14);  }
+a,a:hover,a:focus,i,input,button,input:focus,.transition {text-decoration: none;outline: none;transition-delay: 0s;transition-duration: 0.25s;transition-property: all;transition-timing-function: ease;box-shadow: none;}
+a{color: var(--primary);}
+a:hover{ color: var(--element2) ; }
+u{color: var(--primary);}
+iframe {border: 0;outline: none;}
+.work-images ul { padding: 0; margin: 0; }
+::-moz-selection {background: var(--red);text-shadow: none;color:var(--white)}
+::selection {background:var(--red);text-shadow: none;color:var(--white)}
+img {max-width: 100%;border: none;outline: none;height: auto;}
+input,textarea {border-radius: 0;resize: none;}
+@font-face {
+font-family: 'DM Serif Display', serif;
+font-family: 'Inter', sans-serif;}
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {background-color: transparent;background-image: none;color:#000;}
+/* 1.2 Typography */
+h1,h2,h3,h4,h5,h6 {font-family: 'DM Serif Display', serif; color: var(--element1);}
+p, ul {color: var(--element3);}
+figure{ margin: 0 }
+svg,img { max-width: 100%; height: auto; }
+.ds-boder_text{ position: relative; display: inline-block; }
+.ds-boder_text span{ position: relative; z-index: 1 }
+
+.ds-boder_text:after{ content: ""; position: absolute; bottom: 0; left: 0; background-color:var(--primary); height: 0.9375rem; width:100%; transform: scaleX(1.0); transform-origin: bottom left; transition: transform 0.25s ease-out;}
+.ds-boder_text:hover:after{ transform: scaleX(0); transform-origin: bottom right;}
+
+.margin-60{ margin-bottom: var(--margin-60);  }
+.padding-0{ padding-top: 0 }
+.ds-view-button{font-weight: 600; font-size: 1rem; color: var(--element1);}
+.ds-view-button i{ display: inline-block; vertical-align: middle; color: var(--primary); font-size: 1.625rem; }
+.ds-view-button:hover{color: var(--primary); }
+/*.ds-view-button:hover{color: #00B7CC; }*/
+.text-left{ text-align: left; }
+.ds-arrow {background: var(--primary);height:0.125rem;width:3.125rem;position: relative;cursor: pointer; display: inline-block; vertical-align: middle;transition-delay: 0s;transition-duration: 0.4s;transition-property: all;transition-timing-function: ease; margin-left:0.5rem}
+.ds-arrow:before, .ds-arrow:after {content: "";background: var(--primary);position: absolute;height:0.125rem;width:0.8125rem; /*transition-delay: 0s;transition-duration: 0.4s;transition-property: all;transition-timing-function:*/}
+.ds-arrow:before {right: -0.25rem;bottom: -0.25rem;transform: rotate(-45deg);}
+.ds-arrow:after {right: -0.25rem;top: -0.25rem; transform: rotate(45deg);}
+.ds-button-arrow:hover .ds-arrow{ margin-left:0.9375rem }
+.active .ds-arrow{ height: 0; width: 0; margin-left: 1rem;}
+.active .ds-arrow:before { bottom: 0 ; top: -0.12rem; transform: rotate(45deg); }
+.active .ds-arrow:after { right: -0.75rem; top: -0.12rem; transform: rotate(135deg); }
+
+.ds-back-to-home{ display: inline-block; padding:0.625rem 1.25rem; border-radius: 100%; border: 1px solid var(--element1); font-size: 1.875rem; color: var(--element1);}
+.ds-back-to-home:hover{ color: var(--primary); border-color: var(--primary); }
+/*-----------------------------------------------------------------
+  1. >>> Header Style
+----------------------------------------------------------------*/
+.ds-header{ padding-top:7.1875rem; padding-bottom:var(--40);}
+.ds-logo{font-family: 'Inter', sans-serif; color:var(--element1); font-size:1.5rem; font-weight: 600; text-transform: uppercase; text-align: center;}
+.ds-logo:hover{color:var(--primary);}
+.ds-logo img{height: 2rem;  margin-left: auto; margin-right: auto; vertical-align: sub;}
+/*-----------------------------------------------------------------
+  2. >>> Banner Style
+----------------------------------------------------------------*/
+.ds-banner-section{ text-align: left; margin-bottom: var(--margin-120);  }
+.ds-heading,.ds-heading-inner{ font-size: 4.375rem; line-height:6rem; margin-bottom:3.1875rem;}
+.ds-heading {padding-right: 10rem;}
+.ds-heading span{ border-bottom:15px solid var(--primary);  }
+
+
+.ds-banner-section figure{ margin-bottom: var(--margin-54) }
+.ds-banner-section p{font-size:var(--font_16);line-height:var(--30); margin-bottom: var(--30); }
+.ds-button{ display: inline-block; text-transform: uppercase; color: #FFF; background-color: var(--primary); border-radius:var(--font_30); padding:1.125rem 3.625rem; font-weight: 700; letter-spacing: 1px }
+.ds-button:hover{ color: #FFF; background-color:var(--primary) }
+.ds-content-width p{ width:570px }
+
+.ds-project-list-section {margin-bottom: 3rem;}
+
+.ds-project-list-loop-inner .ds-proj-hedding{ font-size:1.625rem; margin-bottom:0.5rem;font-family: 'Inter', sans-serif; font-weight: 600 }
+.ds-project-list-loop-inner .ds-tools{ font-weight:400; font-size: 1.125rem; display: block; color: var(--element1);}
+
+.ds-project-list{ display: grid;grid-template-columns: auto auto; margin:0 -0.75rem}
+.ds-project-list-loop{ padding: 0 0.75rem; }
+.ds-project-list-loop:nth-child(even){ margin-top:- var(--margin-120) }
+.ds-project-list-loop:nth-child(odd){ margin-top: var(--margin-120) }
+.ds-project-list-loop-inner{ background-color:#FFF; box-shadow: 0px 0px 3px #cecaca;transition-delay: 0s;transition-duration: 0.8s;transition-property: all;transition-timing-function: ease;transform: translateY(0); }
+.ds-project-list-loop-inner section{padding:1.875rem; background-color: var(--surface2);   }
+.ds-project-list-loop a{ color: #000 }
+.ds-project-list-loop:hover .ds-project-list-loop-inner{/*box-shadow: 0px 0px 20px #cecaca;*/transform: translateY(-1.25rem);}
+/*-----------------------------------------------------------------
+  3. >>> About Style
+----------------------------------------------------------------*/
+.ds-proj-hedding{ font-size:1.625rem; margin-bottom:0.5rem;font-family: 'Inter', sans-serif; font-weight: 600 }
+.ds-tools{ font-weight:400; font-size: 1.125rem; display: block; }
+.ds-about-section{ margin-top:8.8125rem }
+.ads-bout-section .ds-heading-inner,.ds-back-home{ margin-bottom: var(--margin-54) }
+
+
+.ds-left-right-section .ds-hedding{font-size:3rem; position:relative; margin-bottom:0.875rem;font-family: 'DM Serif Display', serif;}
+.ds-left-right-section {margin-bottom: var(--margin-120);}
+.ds-left-right-section  figure{ margin-bottom: var(--margin-60); }
+.ds-left-right-section .ds-tools{ font-weight: 700 }
+.ds-left-right-section  p{ font-size: 1.375rem; line-height:var(--font_36); margin-bottom: 2.5rem }
+/*-----------------------------------------------------------------
+  4. >>> Project Style
+----------------------------------------------------------------*/
+.ds-case-studies-list{margin-bottom: var(--margin-120);}
+.ds-case-studies-list figure{ margin-bottom: var(--margin-60); }
+.ds-hedding{ font-size: var(--font_48); margin-bottom: var(--font_14); }
+.ds-tools{ font-weight: 700 }
+
+
+.ds-case-studies-details{ padding-bottom: 5.25rem; }
+.ds-case-studies-details .ds-case-studies-list{ margin-bottom: 2.75rem; }
+.ds-case-studies-details .ds-tools{ margin-bottom: var(--margin-60); display: block; }
+
+/*================= From the Old ver  ================= */
+
+main[role="main-inner-wrapper"] { padding-bottom:90px}
+
+main[role="main-inner-wrapper"] article[role="pge-title-content"]{ padding-left:41px}
+
+main[role="main-inner-wrapper"] article[role="pge-title-content"] header{ padding-bottom:19px; padding-top:83px}
+
+main[role="main-inner-wrapper"] article[role="pge-title-content"] header h2{ font-size:46px; line-height:53px; color:var(--element1); font-weight:800}
+
+main[role="main-inner-wrapper"] article[role="pge-title-content"] header h2 span{ display:block; font-size:80px; color: var(--primary); padding-bottom:15px}
+
+main[role="main-inner-wrapper"] article[role="pge-title-content"] p{ font-size:20px; line-height:30px; color:var(--element3);}
+
+/*========= Work Details =============*/
+
+.work-header{ border-bottom: 1px solid var(--element3); margin-bottom: 5rem; padding-bottom: 5rem; }
+
+.work-content{ margin-bottom: 1rem; padding-bottom: 1rem;  }
+
+.work-details header h2{ color:var(--element1); font-size:36px; font-weight:800}
+
+.work-details header a{ display:inline-block; color: var(--primary); font-size:18px;font-weight:800;padding-top:3px}
+
+.work-details header a i{ color:#0d0d0d; padding-left:10px}
+
+.work-details header a:hover{ color:#0d0d0d; text-decoration:none}
+
+.work-details header a:hover i{ color: var(--primary)}
+
+.work-details h3{margin-bottom:7px;}
+
+.work-details h3 strong{ font-weight: 700; }
+
+.work-details p{ font-size: 1.2rem; color:var(--element3); line-height:var(--font_36); font-weight:300}
+
+.work-details p strong{ font-weight:800}
+
+.work-details ul { font-size:1.2rem; color:var(--element3); line-height:var(--font_36); margin-bottom: 2.5rem; font-weight:300 }
+
+.work-details figcaption p{line-height:20px; margin-bottom:0; font-weight: 500;}
+
+.work-images{ margin-top:46px}
+
+.work-images li{ margin-bottom:50px}
+
+.grid{
+    position: relative;
+    list-style: none;
+    overflow: hidden;
+    text-align: center;
+}
+
+
+/*-----------------------------------------------------------------
+  5. >>> Footer Style
+----------------------------------------------------------------*/
+.ds-footer{ background-color:var(--surface2); padding:var(--margin-120) 0; }
+.ds-padding-0-about.ds-footer{ padding-top: 0 }
+.ds-lets_section h3{ color: var(--element1);font-family: 'Inter', sans-serif; font-weight: 700; font-size:4.375rem; margin-bottom: 1.0625rem  }
+.ds-lets_section span{ color: var(--element1); font-size:1.125rem;  }
+
+.ds-email_social{ display: flex; justify-content: space-between; align-items: center; padding:6.375rem 0; padding-bottom: 2.5rem }
+.ds-email{ color: var(--element1); font-size: var(--font_30); font-weight: 600; display: inline-block; }
+.ds-email:hover{color: var(--primary);}
+.ds-social{list-style: none; padding: 0; margin: 0; display: flex;}
+.ds-social li{ margin-right:3rem; }
+.ds-social li:last-child{ margin-right: 0 }
+.ds-social a{ color:var(--element3); font-size: 2.5625rem; }
+.ds-social a:hover{ color: var(--primary); }
+.ds-copyright{ display: block; text-align: right; color: var(--element3); font-size:1.125rem }
+.ds-copyright a{color:var(--element3);}
+.ds-copyright a:hover{color:var(--primary); text-decoration: underline;}
+
+
+/*-------------------------------------------------------------------------------
+  Dark/Light Mode Toggle CSS
+-------------------------------------------------------------------------------*/
+
+
+.container .switch {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 1.5rem 0 0 0;
+}
+
+/* this is the oval shape */
+.container .switch .slider {
+  position: absolute;
+  height: 2rem;
+  width: 3.5rem;
+  border-radius: 30px;
+  background-color: var(--night-color);
+  cursor: pointer;
+  transition: var(--transition-time);
+  z-index: 99;
+}
+
+/* this is the circle inside shape */
+.container .switch .slider:before {
+  position: absolute;
+  left: 0.5rem;
+  bottom: 0.35rem;
+  height: 1.3rem;
+  width: 1.3rem;
+  content: "";
+  border-radius: 50%;
+  background-color: var(--day-color);
+  transition: var(--transition-time);
+}
+
+#toggle {
+  opacity: 0;
+  touch-action: none;
+}
+
+#toggle:checked ~ .slider {
+  background-color: var(--day-color);
+}
+
+#toggle:checked ~ .slider:before {
+  background-color: var(--day-color);
+  box-shadow: inset -0.6rem -0.3rem 0 0 var(--night-color);
+  /*transform: translate(1.3rem, 0.08rem);*/
+  transform: translateX(1.3rem);
+}
+
+#toggle:checked ~ .slide-block {
+  left: 0;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.slide-block {
+  height: 100vh;
+  width: 150vw;
+  position: fixed;
+  top: 0;
+  background: var(--night-background);
+  transition: var(--transition-time);
+  z-index: -1;
+}
+.slide-block.slide-out {
+  left: -150vw;
+  border-bottom-right-radius: 100%;
+  border-top-right-radius: 100%;
+}
+
+.slide-block.slide-in {
+  left: 0;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+/*-------------------------------------------------------------------------------
+  Modal Image
+-------------------------------------------------------------------------------*/
+
+.my-modal{
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: block;
+  margin: auto;
+}
+
+.my-modal:hover {
+	transform: scale(1.05);
+	filter: drop-shadow(0.5rem 0.5rem 1rem #D1D1D1);
+}
+
+/* Designed for wide screens the padding 10rem may not work on phones it will make it smol */
+.modalStyle{
+	display: none; /* Hidden*/
+	position: fixed;
+	padding: 8rem 5rem;
+	left: 0;
+	top: 0;
+	z-index: 1000;
+	width: 100%; 
+	height: 100%;
+	overflow: auto;
+
+	background-color: var(--surface3);
+}
+
+
+.modal-content{
+	background-color: transparent;
+	border: none;
+}
+
+
+/* Caption of Modal Image */
+#caption {
+	margin: auto;
+	display: block;
+	width: 80%;
+	text-align: center;
+	color: var(--element1);
+	padding: 10px 0;
+}
+
+/* Animation Zoom In */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+/*@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}*/
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+div #modal-button{ width: 31px;font-size: 0;float: right;height: 2.5rem; position: relative; z-index:70; cursor: pointer;}
+
+div #modal-button span {
+	display: block;
+	position: absolute;
+	z-index: 60;
+	height: 3px; 
+	width: 100%;
+	opacity: 1;
+	left: 0; 
+	background: var(--element2);
+	-webkit-transition: .25s ease-in-out;
+	-moz-transition: .25s ease-in-out;
+	-o-transition: .25s ease-in-out;
+	transition: .25s ease-in-out;
+}
+
+div #modal-button span:nth-child(1) { top: 10px; -webkit-transform: rotate(135deg);-moz-transform: rotate(135deg);-o-transform: rotate(135deg);transform: rotate(135deg);}
+
+div #modal-button span:nth-child(2) {top: 10px; -webkit-transform: rotate(-135deg);-moz-transform: rotate(-135deg);-o-transform: rotate(-135deg);transform: rotate(-135deg);}
+
+
+
+/*-------------------------------------------------------------------------------
+Intro Vid
+-------------------------------------------------------------------------------*/
+.ds-banner-section button{
+	background-color: transparent;
+	border: none;
+	padding: 1rem 0;
+}
+
+.video-content{
+	position: relative;
+	padding: 0 5rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: var(--surface2);
+}
+
+.intro-vid {
+	margin: 2.5rem 0;
+}
+
+
+/*-------------------------------------------------------------------------------
+Full Bleed Box Title Work Details Page
+-------------------------------------------------------------------------------*/
+
+.full-bleed-color{
+	background-color: var(--fullbleed);
+	width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-bottom: 2rem;
+  text-align: center;
+  padding: 8rem 0;
+
+}
+
+
+/*-------------------------------------------------------------------------------
+Prototype Bottom Margin
+-------------------------------------------------------------------------------*/
+
+.figmaprototype{
+	margin-bottom: 5rem;
+}

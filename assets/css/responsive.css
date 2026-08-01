@@ -1,0 +1,133 @@
+/* md */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+	.comments-reply li section{ width:88%}
+
+	/*heading right padding*/
+	.ds-heading{ padding-right: 3rem;}
+
+}
+
+/* sm */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+	main[role="main-inner-wrapper"] article[role="pge-title-content"]{ padding-left:0}
+
+	main[role="main-inner-wrapper"] article[role="pge-title-content"] header{ padding-top:0}
+
+	main[role="main-inner-wrapper"] article[role="pge-title-content"] header h2{ font-size:34px}
+
+	.grid-lod li{ width:100% !important; position:static !important; display:inline-block}
+
+	.grid-lod li img{ width:100%}
+
+	.work-details{ padding:0; margin-top:0}
+
+	.video-content{ padding: 0 1.5rem; }
+	#intro-vid{ margin: 1rem 0; }
+
+	/* Photos Modal */
+	.modalStyle{ padding: 8rem 0.5rem;}
+
+	/*Header right padding*/
+	.ds-heading{ padding-right: 0rem;}
+
+
+	/* Full HEader titles*/
+	.full-bleed-color{
+	background-color: var(--secondary);
+	width: 100vw;
+  	position: relative;
+  	left: 50%;
+  	right: 50%;
+ 	margin-left: -50vw;
+  	margin-right: -50vw;
+ 	margin-bottom: 2rem;
+  	text-align: center;
+  	padding: 8rem 0;
+	}
+
+
+}
+
+/* xs */
+
+@media (max-width: 767px) {
+
+	main[role="main-inner-wrapper"] article[role="pge-title-content"]{ padding-left:0}
+
+	main[role="main-inner-wrapper"] article[role="pge-title-content"] header{ padding-top:10px}
+
+	main[role="main-inner-wrapper"] article[role="pge-title-content"] header h2{ font-size:47px}
+
+	main[role="main-inner-wrapper"] article[role="pge-title-content"] header h2 span{ font-size:60px;}
+
+	main[role="main-inner-wrapper"] .about-content{ padding:5%}
+
+	main[role="main-inner-wrapper"] .thumbnails-pan section figure{ margin-bottom:20px}
+
+	.work-details{ padding:0; margin-top:0}
+
+	.work-images{ margin-top:0}
+
+	.work-images li{ margin-bottom:10px; width:100%}
+
+	.work-images li figcaption h2{ font-size:18px;}
+
+	.grid-lod li{ width:100% !important; position:static !important}
+
+	/*-------------------------------------------------------------------------------
+	 XS Style @media (max-width: 767px) 
+	-------------------------------------------------------------------------------*/
+	.row{ margin-left:0; margin-right:0  }
+	.container{ padding-left:1.25rem; padding-right: 1.25rem;  }
+	.ds-header{ padding:3.75rem 0  }
+	.ds-heading{font-size: 2.375rem;line-height: 4rem;}
+	.ds-heading-inner{font-size: 3.375rem;line-height: 6rem;}
+	.ds-about-section .ds-heading-inner{ margin-bottom:3.75rem }
+	.ds-about-section{ margin-top: 5.8125rem }
+	.ds-case-studies-details .ds-tools{ margin-bottom: 1.875rem }
+	.ds-heading span br{ display: none; }
+	.ds-banner-section{ margin-bottom: var(--margin_30) }
+	.ds-content-width p{width: 100%}
+	.ds-lets_section h4{font-size: 3.375rem;}
+	.ds-project-list{ grid-template-columns: auto; }
+
+	.ds-project-list-loop:nth-child(even),.ds-project-list-loop:nth-child(odd){ margin: 0; margin-bottom:1.875rem  }
+
+	.ds-case-studies-details .ds-case-studies-list{ margin-bottom: -0.25rem }
+	.d-flex{ flex-wrap:wrap; }
+	.ds-left-right-section section{ margin-bottom:1.875rem  }
+	.ds-left-right-section{ margin-bottom:1.875rem  }
+	.ds-footer{ padding-top:1.875rem }
+	.ds-email_social{justify-content: center;flex-wrap: wrap; padding: 4.375rem 0}
+	.ds-copyright{ text-align: center; }
+	.ds-social{ margin-top: 1.25rem }
+
+	.video-content{ padding: 0 0.5rem; }
+	#intro-vid{ margin: 0.7rem 0; }
+
+	/* Photos Modal */
+	.modalStyle{ padding: 8rem 0.5rem;}
+
+	/*Header right padding*/
+	.ds-heading{ padding-right: 0rem;}
+
+	/* Full HEader titles*/
+	.full-bleed-color{
+	background-color: var(--secondary);
+	width: 100vw;
+  	position: relative;
+  	left: 50%;
+  	right: 50%;
+ 	margin-left: -50vw;
+  	margin-right: -50vw;
+ 	margin-bottom: 2rem;
+  	text-align: center;
+  	padding: 8rem 0;
+  }
+}
+	
+
