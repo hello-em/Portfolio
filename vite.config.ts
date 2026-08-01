@@ -22,11 +22,12 @@ const oldPortfolioFiles = [
   'freelance-work.html',
 ].map((file) => ({ src: file, dest: '.' }));
 
-// Old portfolio asset folders — CSS, JS, and fonts needed by the old HTML pages
+// Old portfolio asset folders — CSS, JS, fonts, and images needed by the old HTML pages
 const oldPortfolioAssets = [
-  { src: 'assets/css', dest: 'assets' },
-  { src: 'assets/js',  dest: 'assets' },
-  { src: 'assets/fonts', dest: 'assets' },
+  { src: 'assets/css',    dest: 'assets' },
+  { src: 'assets/js',     dest: 'assets' },
+  { src: 'assets/fonts',  dest: 'assets' },
+  { src: 'assets/images', dest: 'assets' }, // old HTML references assets/images/...
 ];
 
 export default defineConfig({
