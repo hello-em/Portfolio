@@ -1,5 +1,5 @@
 import { useRef, useCallback } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router';
+import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router';
 import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -12,6 +12,32 @@ import About from './pages/About';
 import ProjectDetail from './pages/ProjectDetail';
 import FreelanceWork from './pages/FreelanceWork';
 import NotFound from './pages/NotFound';
+
+// Layout wrapper — shared nav/footer for all real pages
+function MainLayout({
+  onSubmitMessage,
+  registerSpawn,
+}: {
+  onSubmitMessage: (letters: SpawnPayload[]) => void;
+  registerSpawn: (fn: (letters: SpawnPayload[]) => void) => void;
+}) {
+  return (
+    <>
+      <LetterPhysics registerSpawn={registerSpawn} />
+      <div className="min-h-screen flex flex-col bg-[#fdfdfd] text-black dark:bg-[#0d1117] dark:text-white selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black transition-colors duration-300 font-sans">
+        <Navbar onSubmitMessage={onSubmitMessage} />
+        <div className="flex flex-col min-h-screen md:pl-[18rem]">
+          <main className="flex-1 min-w-0">
+            {/* Child routes render here */}
+            <Outlet />
+          </main>
+          <Footer />
+        </div>
+        <FloatingScrollToTop />
+      </div>
+    </>
+  );
+}
 
 export default function App() {
   const spawnRef = useRef<((letters: SpawnPayload[]) => void) | null>(null);
@@ -30,30 +56,23 @@ export default function App() {
         <CustomCursor />
         <ScrollToTop />
         <Routes>
-          {/* 404 — completely standalone, no nav/footer/sidebar */}
-          <Route path="*" element={<NotFound />} />
+          {/* All real pages share the MainLayout (nav + footer + sidebar) */}
+          <Route
+            element={
+              <MainLayout
+                onSubmitMessage={handleSubmitMessage}
+                registerSpawn={registerSpawn}
+              />
+            }
+          >
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/freelance" element={<FreelanceWork />} />
+            <Route path="/project/:id" element={<ProjectDetail />} />
+          </Route>
 
-          {/* All other routes share the main layout */}
-          <Route path="/*" element={
-            <>
-              <LetterPhysics registerSpawn={registerSpawn} />
-              <div className="min-h-screen flex flex-col bg-[#fdfdfd] text-black dark:bg-[#0d1117] dark:text-white selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black transition-colors duration-300 font-sans">
-                <Navbar onSubmitMessage={handleSubmitMessage} />
-                <div className="flex flex-col min-h-screen md:pl-[18rem]">
-                  <main className="flex-1 min-w-0">
-                    <Routes>
-                      <Route path="/" element={<Home />} />
-                      <Route path="/about" element={<About />} />
-                      <Route path="/freelance" element={<FreelanceWork />} />
-                      <Route path="/project/:id" element={<ProjectDetail />} />
-                    </Routes>
-                  </main>
-                  <Footer />
-                </div>
-                <FloatingScrollToTop />
-              </div>
-            </>
-          } />
+          {/* 404 — standalone, no nav/footer, only matches unknown URLs */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </ThemeProvider>
