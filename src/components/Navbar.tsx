@@ -144,6 +144,12 @@ export default function Navbar({ onSubmitMessage }: NavbarProps) {
           >
             Email me
           </a>
+          <Link
+            to="/404"
+            className="hover:text-brand/70 text-zinc-500 dark:text-zinc-400 transition-colors"
+          >
+            ##ERROR##
+          </Link>
 
           {/* Theme toggle sits right below the nav links */}
           <button
@@ -281,6 +287,18 @@ export default function Navbar({ onSubmitMessage }: NavbarProps) {
                 >
                   Email Me
                 </a>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: (navLinks.length + 1) * 0.07 + 0.05 }}
+              >
+                <Link
+                  to="/404"
+                  className="block text-sm font-semibold uppercase tracking-widest text-zinc-800 dark:text-zinc-100 hover:text-brand transition-colors"
+                >
+                  ##ERROR##
+                </Link>
               </motion.div>
             </motion.div>
           </>
